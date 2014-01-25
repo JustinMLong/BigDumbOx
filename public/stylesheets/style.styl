@@ -23,19 +23,16 @@ header
 	z-index: 3;
 	text-align: center;
 
+	& a
+		text-decoration:none;
 
-header a 
-	text-decoration:none;
-
-
-header img 
-	float: right;
-	position:relative;
-	padding-right:10%;
-	height: 150px;
-	z-index: 3;
-	border:none;
-
+	& img
+		float: right;
+		position:relative;
+		padding-right:10%;
+		height: 150px;
+		z-index: 3;
+		border:none;	
 
 navigation 
 	font-size:12px;
@@ -48,7 +45,49 @@ navigation
 	padding-right: 10%;
 	text-align:left;
 	font-style: italic;
+	
+	& ul
+		margin:0px; 
+		padding-left: 10%;
+		z-index: 3;
 
+		& li 
+			line-height:25px;
+			float: left;
+			max-height:25px;
+			list-style:none;
+			cursor:pointer; 
+			text-align:left;
+			font-size: 12pt;
+			min-width: 2em;
+			margin: 0 15px 0 15px;
+
+			&:hover
+				line-height:25px;
+				min-height:25px;
+				position:relative;
+
+			& a
+				text-decoration:none;
+				display:block;
+				color: gray;
+				
+				&:before
+					content: "[ "; 
+					color: maroon; 
+					position: absolute; 
+					left: -.75em;
+
+				&:after
+					content: " ]"; 
+					color: maroon; 
+					position: absolute; 
+					right: -.75em;
+
+				&:visited
+					text-decoration:none;
+					display:block;
+					color: gray;
 
 div#content 
 	position: absolute; 
@@ -57,54 +96,6 @@ div#content
 	padding-right:10%; 
 	z-index: 0;
 	width: 80%;
-
-
-navigation ul 
-	margin:0px; 
-	padding-left: 10%;
-	z-index: 3;
-
-
-navigation ul li 
-	line-height:25px;
-	float: left;
-	max-height:25px;
-	list-style:none;
-	cursor:pointer; 
-	text-align:left;
-	font-size: 12pt;
-	min-width: 2em;
-	margin: 0 15px 0 15px;
-
-
-navigation ul li:hover a:before 
-	content: "[ "; 
-	color: maroon; 
-	position: absolute; 
-	left: -.75em;
-navigation ul li:hover a:after	
-	content: " ]"; 
-	color: maroon; 
-	position: absolute; 
-	right: -.75em;
-
-navigation ul li a 
-	text-decoration:none;
-	display:block;
-	color: gray;
-
-
-navigation ul li a:visited 
-	text-decoration:none;
-	display:block;
-	color: gray;
-
-
-navigation ul li:hover 
-	line-height:25px;
-	min-height:25px;
-	position:relative;
-
 
 #oxlogo 
 	position: absolute; top: 17px; left: 5px; 
@@ -197,7 +188,6 @@ span.in
 
 span.pre
 	display: none;
-
 
 hr
 	width:100%;
