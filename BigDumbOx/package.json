@@ -1,0 +1,15 @@
+{
+  "name": "BigDumbOx",
+  "version": "0.0.0",
+  "description": "BigDumbOx",
+  "main": "app.js",
+  "author": {
+    "name": "Justin",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
