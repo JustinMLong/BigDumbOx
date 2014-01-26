@@ -31,3 +31,7 @@ exports.signup = function (req, res) {
 exports.standings = function (req, res) {
 	res.render('standings', { title: 'BigDumbOx Tournament Rules' });
 };
+
+exports.user = function (req, res) {
+	res.render('user', { name: { first: "Justin", nick: "it ain't that", last: "Long" }, teams: null });
+}
