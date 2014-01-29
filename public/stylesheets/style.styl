@@ -139,6 +139,14 @@ p.main
 	font-weight:bold;
 	color: navy;
 
+p.note:before
+	font-weight: bold;
+	color: navy;
+	content: "Note: ";
+
+p.note + p.note:before
+	content: "Double Note: "
+
 h3 
 	color:navy;
 
@@ -151,6 +159,27 @@ h3.center
 h6 
 	text-align:center;
 
+label
+	display: block;
+	margin-top: 10px;
+	width: 25em;
+label.extrawide
+	width: 55em;
+
+label.inline
+	display: inline-block;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	width: auto;
+
+label input[required]:before
+	content: "*";
+	float: left;
+
+label input
+	margin-left: 20px;
+	float: right;
+	display: block;
 
 table	
 	border:none;

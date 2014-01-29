@@ -30,19 +30,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="config\index.js" />
+    <Compile Include="db\index.js" />
+    <Compile Include="db\users.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\rules.js" />
     <Compile Include="routes\user.js" />
+    <Content Include="config\development.json" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="views\champions.jade" />
     <Content Include="views\header.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\navigation.jade" />
+    <Content Include="views\participants.jade" />
     <Content Include="views\rules.jade" />
+    <Content Include="views\scoring.jade" />
+    <Content Include="views\signup.jade" />
+    <Content Include="views\standings.jade" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="db\" />
+    <Folder Include="config\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
