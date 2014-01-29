@@ -1,34 +1,30 @@
+module.exports = function (app) {
+	var fs = require('fs');
 
-/*
- * GET home page.
- */
+	var routeList = fs.readdirSync(__dirname);
+	var routes = [];
 
-exports.index = function(req, res){
-	res.render('index', { title: 'BigDumbOx Tournament', routes: Object.keys(exports) });
-	console.log(exports);
-	console.log(Object.keys(exports));
-};
+	routeList.forEach(function (file) {
+		if (file.toLowerCase() == 'index.js')
+			return;
 
-exports.rules = function (req, res) {
-	res.render('rules', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
-};
+		var route = require('./' + file);
+		var routeName = file.replace('.js', '');
+		routes.push(routeName);
 
-exports.champions = function (req, res) {
-	res.render('champions', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
-};
+		Object.keys(route).forEach(function(method) {
+			app[method]('/' + routeName, route[method]);
+		});
 
-exports.participants = function (req, res) {
-	res.render('participants', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
-};
+	});
 
-exports.scoring = function (req, res) {
-	res.render('scoring', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
-};
+	exports.index = {
+		get: function (req, res) {
+			res.render('index', { title: 'BigDumbOx Tournament' });
+		}
+	}
 
-exports.signup = function (req, res) {
-	res.render('signup', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
-};
+	app.set('routes', routes);
 
-exports.standings = function (req, res) {
-	res.render('standings', { title: 'BigDumbOx Tournament Rules', routes: Object.keys(exports) });
+	app.get('/', exports.index.get);
 };

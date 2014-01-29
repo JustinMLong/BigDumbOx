@@ -4,12 +4,9 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
+
 var path = require('path');
 var config = require('./config');
-
 var app = express();
 
 // all environments
@@ -30,19 +27,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-//app.get('/users', user.list);
-app.get('/rules', routes.rules);
-app.get('/champions', routes.champions);
-app.get('/participants', routes.participants);
-app.get('/scoring', routes.scoring);
-app.get('/signup', routes.signup);
-app.get('/standings', routes.standings);
-app.get('/user', routes.user);
+require('./routes')(app);
 
-
-require('./db');
-
-http.createServer(app).listen(app.get('port'), function(){
+app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

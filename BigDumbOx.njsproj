@@ -33,9 +33,13 @@
     <Compile Include="config\index.js" />
     <Compile Include="db\index.js" />
     <Compile Include="db\users.js" />
+    <Compile Include="routes\champions.js" />
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\participants.js" />
     <Compile Include="routes\rules.js" />
-    <Compile Include="routes\user.js" />
+    <Compile Include="routes\scoring.js" />
+    <Compile Include="routes\signup.js" />
+    <Compile Include="routes\standings.js" />
     <Content Include="config\development.json" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
