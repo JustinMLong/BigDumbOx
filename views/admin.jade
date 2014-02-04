@@ -1,0 +1,24 @@
+﻿extends layout
+
+block content
+	h1 Admin Panel
+
+	#team
+		h2 Modify Teams
+		
+		if teams
+			p teams are listed!
+		else
+			p No teams, add one now?
+			form(method="put")
+				input(type="hidden", name="call", value="insertTeam")
+				label.inline * Name
+					input(name="name")
+				label.inline * Region
+					select(name="region")
+						for region in regions
+							option(value=region.id)= region.name
+				label.inline * Seed
+					input(name="seed", size="2", type="number", min="1", max="16")
+				label.inline  &nbsp;
+					input(type="submit", value="Add")

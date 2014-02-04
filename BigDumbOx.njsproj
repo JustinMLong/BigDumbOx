@@ -29,10 +29,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="routes\admin\champions.js" />
+    <Compile Include="routes\admin\index.js" />
     <Compile Include="app.js" />
     <Compile Include="config\index.js" />
     <Compile Include="db\index.js" />
-    <Compile Include="db\users.js" />
+    <Compile Include="routes\admin\teams.js" />
     <Compile Include="routes\champions.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\participants.js" />
@@ -41,9 +43,13 @@
     <Compile Include="routes\signup.js" />
     <Compile Include="routes\standings.js" />
     <Content Include="config\development.json" />
+    <Content Include="db\queries.json" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
+    <Content Include="views\admin.jade" />
+    <Content Include="views\admin\champions.jade" />
+    <Content Include="views\admin\team.jade" />
     <Content Include="views\champions.jade" />
     <Content Include="views\header.jade" />
     <Content Include="views\index.jade" />
@@ -63,7 +69,9 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
+    <Folder Include="routes\admin\" />
     <Folder Include="views\" />
+    <Folder Include="views\admin\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>

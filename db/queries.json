@@ -1,0 +1,6 @@
+﻿{
+	"addTeam": "INSERT INTO \"TEAM\" (name, region, seed) VALUES ($1, $2, $3);",
+	"getRegions": "SELECT * FROM \"REGION\"",
+	"getTeams": "SELECT * FROM \"TEAM\""
+
+}

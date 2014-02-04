@@ -5,8 +5,6 @@ module.exports = function (app) {
 	var routes = [];
 
 	routeList.forEach(function (file) {
-		if (file.toLowerCase() == 'index.js')
-			return;
 
 		var route = require('./' + file);
 		var routeName = file.replace('.js', '');
@@ -17,6 +15,8 @@ module.exports = function (app) {
 		});
 
 	});
+
+	routes = routes.filter(function (route) { return !/(admin)|(index)/i.test(route); });
 
 	exports.index = {
 		get: function (req, res) {
