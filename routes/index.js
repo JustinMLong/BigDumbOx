@@ -1,3 +1,8 @@
+exports.get = function (req, res) {
+	res.render('index', { title: 'BigDumbOx Tournament' });
+}
+
+/*
 module.exports = function (app) {
 	var fs = require('fs');
 
@@ -27,4 +32,4 @@ module.exports = function (app) {
 	app.set('routes', routes);
 
 	app.get('/', exports.index.get);
-};
+};*/

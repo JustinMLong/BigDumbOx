@@ -1,4 +1,11 @@
-﻿header
-  a(href="/"): img(alt="" src="/images/oxlogo.jpg")
+﻿mixin navigation (navigationSet)
+	navigation
+		ul#navigation
+			each route in routes[navigationSet]
+				unless route == 'index'
+					li: a(href="/"+route)= route
 
-  include navigation
+header
+	a(href="/"): img(alt="" src="/images/oxlogo.jpg")
+
+	include navigation

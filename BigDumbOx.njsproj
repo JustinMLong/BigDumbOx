@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lib\router.js" />
     <Compile Include="routes\admin\champions.js" />
     <Compile Include="routes\admin\index.js" />
     <Compile Include="app.js" />
@@ -36,6 +37,7 @@
     <Compile Include="db\index.js" />
     <Compile Include="routes\admin\teams.js" />
     <Compile Include="routes\champions.js" />
+    <Compile Include="routes\commentary.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\participants.js" />
     <Compile Include="routes\rules.js" />
@@ -47,10 +49,11 @@
     <Content Include="package.json" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
-    <Content Include="views\admin.jade" />
+    <Content Include="views\admin\index.jade" />
     <Content Include="views\admin\champions.jade" />
     <Content Include="views\admin\team.jade" />
     <Content Include="views\champions.jade" />
+    <Content Include="views\commentary.jade" />
     <Content Include="views\header.jade" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
@@ -64,6 +67,7 @@
   <ItemGroup>
     <Folder Include="db\" />
     <Folder Include="config\" />
+    <Folder Include="lib\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
