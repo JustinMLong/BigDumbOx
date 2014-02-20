@@ -18,3 +18,7 @@ exports.put = function (req, res) {
 
 		
 }
+
+exports.before = function (req, res, next) {
+	
+}

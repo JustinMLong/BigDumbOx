@@ -1,11 +1,11 @@
 ﻿mixin navigation (navigationSet)
 	navigation
 		ul#navigation
-			each route in routes[navigationSet]
+			each route in navigationSet
 				unless route == 'index'
 					li: a(href="/"+route)= route
 
 header
 	a(href="/"): img(alt="" src="/images/oxlogo.jpg")
 
-	include navigation
+	+navigation(routes.main)
