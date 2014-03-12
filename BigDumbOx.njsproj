@@ -29,6 +29,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="install.js" />
     <Compile Include="lib\router.js" />
     <Compile Include="routes\admin\champions.js" />
     <Compile Include="routes\admin\index.js" />

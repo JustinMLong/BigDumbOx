@@ -1,1 +1,21 @@
 ﻿extends ../layout
+
+block content
+	h1 Champions Modification - Admin Panel
+
+	#team
+		h2 Modify Champions
+		
+		if champions
+			p Champions are listed!
+		else
+			p No Champions set yet, add one now?
+			form(method="post")
+				label.inline * Year
+					input(name="year", type="number")
+				label.inline * Champion
+					input(name="champion")
+				label.inline * Runner-up
+					input(name="runner-up")
+				label.inline  &nbsp;
+					input(type="submit", value="Add")

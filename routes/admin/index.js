@@ -2,9 +2,7 @@
 
 
 exports.get = function (req, res) {
-	db.getRegions(function (regionList) {
-		res.render('admin/index', { regions: regionList.rows } );
-	});
+	res.render('admin/index');
 }
 
 exports.put = function (req, res) {
@@ -17,8 +15,4 @@ exports.put = function (req, res) {
 	}
 
 		
-}
-
-exports.before = function (req, res, next) {
-	
 }

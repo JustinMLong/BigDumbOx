@@ -1,6 +1,68 @@
 ﻿{
-	"addTeam": "INSERT INTO \"TEAM\" (name, region, seed) VALUES ($1, $2, $3);",
-	"getRegions": "SELECT * FROM \"REGION\"",
-	"getTeams": "SELECT * FROM \"TEAM\""
+	"teams": {
+		"initialize": [
+			"CREATE TABLE team (",
+				"id SERIAL PRIMARY KEY,",
+				"name text NOT NULL, region integer,",
+				"seed integer CHECK (seed <= 16),",
+				"UNIQUE (region, seed) ",
+			");"
+		],
+
+		"browse": "SELECT * FROM team",
+		"read":   "SELECT * FROM team WHERE $1 = $2",
+		"edit":   "UPDATE team SET $3 = $4 WHERE $1 = $2",
+		"add":    "INSERT INTO team (name, region, seed) VALUES ($1, $2, $3);",
+		"delete": "DELETE FROM team WHERE $1 = $2"
+	},
+
+	"regions": {
+		"initialize": [
+			"CREATE TABLE region (",
+				"id SERIAL PRIMARY KEY,",
+				"name text NOT NULL",
+			");"
+		],
+
+		"browse": "SELECT * FROM region",
+		"read":   "SELCET * FROM region where $1 = $2",
+		"edit":   "UPDATE region SET $3 = $4 WHERE $1 = $2",
+		"add":    "INSERT INTO region (name) VALUES ($1)",
+		"delete": "DELETE FROM region WHERE $1 = $2"
+	},
+
+	"games": {
+		"initialize": [
+			"CREATE TABLE game (",
+				"team1 integer,",
+				"team2 integer,",
+				"team1score integer,",
+				"team2score integer,",
+				"PRIMARY KEY (team1, team2)",
+			");"
+		],
+
+		"browse": "SELECT * FROM game",
+		"read":   "SELCET * FROM game where $1 = $2",
+		"edit":   "UPDATE region SET $3 = $4 WHERE $1 = $2",
+		"add":    "INSERT INTO game (team1, team2, team1score, team2score) VALUES ($1, $2, $3, $4)",
+		"delete": "DELETE FROM game WHERE $1 = $2"
+	},
+
+	"champions": {
+		"initialize": [
+			"CREATE TABLE champion (",
+				"year integer PRIMARY KEY,",
+				"champion text,",
+				"runnerup text",
+			");"
+		],
+
+		"browse": "SELECT * FROM champion SORT BY year DESC",
+		"read":   "SELCET * FROM champion where $1 = $2",
+		"edit":   "UPDATE champion SET $3 = $4 WHERE $1 = $2",
+		"add":    "INSERT INTO champion (year, champion, runnerup) VALUES ($1, $2, $3)",
+		"delete": "DELETE FROM champion WHERE $1 = $2"
+	}
 
 }
